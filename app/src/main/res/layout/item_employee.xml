@@ -14,27 +14,49 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/id_number"
-            android:layout_margin="5dp"
-            android:text="ID number"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/username"
-            android:layout_margin="5dp"
-            android:text="Username"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/salary"
-            android:layout_margin="5dp"
-            android:text="Salary"
-            />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"
+                android:layout_weight="1"
+                android:id="@+id/employee_image"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/id_number"
+                    android:layout_margin="5dp"
+                    android:text="ID number"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/username"
+                    android:layout_margin="5dp"
+                    android:text="Username"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/salary"
+                    android:layout_margin="5dp"
+                    android:text="Salary"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

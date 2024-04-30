@@ -11,13 +11,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonParser
+import com.loopj.android.http.AsyncHttpClient.log
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONArray
+import retrofit2.Retrofit
 import java.util.ArrayList
 
-// Define a data class to represent an employee
-data class Employee(val idNumber: String, val username: String, val salary: String)
-
 class GetEmployee : AppCompatActivity() {
+    private lateinit var api: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -37,9 +43,10 @@ class GetEmployee : AppCompatActivity() {
 
 
         //specify the endpoint
-        //val api = "http://192.168.43.11:5000/employees"
+        //api = "http://192.168.43.11:3000/employees"
         val api = "https://manuel09434.pythonanywhere.com/employees"
         //Access Helper
+        log.d("GETEMPLOYEE", "inside getemployee activity")
         val helper = ApiHelper(applicationContext)
         helper.get(api, object : ApiHelper.CallBack{
             override fun onSuccess(result: String?) {
@@ -49,7 +56,9 @@ class GetEmployee : AppCompatActivity() {
                     val employee = Employee(
                         employeeObject.getString("id_number"),
                         employeeObject.getString("username"),
-                        employeeObject.getString("salary")
+                        employeeObject.getString("salary"),
+                        employeeObject.getString("image_url"),
+                        employeeObject.getString("department")
                     )
                     employees.add(employee)
                 }// end loop
@@ -70,5 +79,8 @@ class GetEmployee : AppCompatActivity() {
 
         val employeeAdapter = EmployeeAdapter(employees, itemClickListener)
         empRecyclerView.adapter = employeeAdapter
+        
     }// end oncreate
-}// end GetEmployee
+
+
+}

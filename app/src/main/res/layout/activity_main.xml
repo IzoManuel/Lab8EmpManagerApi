@@ -16,16 +16,78 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Employee Manager"
-                android:textStyle="bold"
-                android:textSize="25sp"
-                android:background="@drawable/shape"
-                android:padding="20dp"
-                android:textColor="#ffffff"
-                android:textAlignment="center"/>
+                android:background="#5E35B1"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emp Manager"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#ffffff"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/username_greeting"
+                        />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Logout"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#5E35B1"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/logout_btn"
+                        />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Login"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#5E35B1"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/visit_login_btn"
+                        />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Register"
+                        android:textColor="#ffffff"
+                        android:layout_weight="1"
+                        android:backgroundTint="#5E35B1"
+                        android:textStyle="bold"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/visit_register_btn"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
 
             <Button
                 android:layout_width="match_parent"
